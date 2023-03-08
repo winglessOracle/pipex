@@ -6,7 +6,7 @@
 #    By: carlo <carlo@student.42.fr>                  +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 09:28:26 by cwesseli      #+#    #+#                  #
-#    Updated: 2023/03/03 16:33:28 by cwesseli      ########   odam.nl          #
+#    Updated: 2023/03/08 10:08:22 by carlo         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,18 +24,16 @@ CFLAGS		= -Wall -Wextra -Werror
 LIBFT		= ./libft
 LIBS		= $(LIBFT)/libft.a 
 HEADERS		= -I $(LIBFT)
-OBJ_FILES	= $(addprefix obj/, pipex.o utils.o utils2.o error_free.o fork.o\
+OBJ_FILES	= $(addprefix obj/, pipex.o utils.o utils2.o utils3.o error_free.o fork.o\
 				pipes.o)
 
 all: libft $(NAME)
 
-bonus: all
-
 libft:
-	$(MAKE) -C $(LIBFT)
+	@$(MAKE) -C $(LIBFT)
 	
 $(NAME): $(OBJ_FILES)
-	$(CC) $(OBJ_FILES) $(LIBS) $(HEADERS) $(ARCFLAGS) -o $(NAME) $(CFLAGS)
+	@$(CC) $(OBJ_FILES) $(LIBS) $(HEADERS) $(ARCFLAGS) -o $(NAME) $(CFLAGS)
 
 $(OBJ_FILES): obj/%.o: src/%.c 
 	@mkdir -p $(dir $@)
@@ -55,4 +53,4 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY:	all bonus clean fclean re libft
+.PHONY:	all clean fclean re libft

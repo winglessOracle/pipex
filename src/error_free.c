@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/31 12:09:03 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/03 16:20:54 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/06 10:23:20 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,10 @@ int	check_path(char **envp)
 		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
 			path = 1;
 	return (path);
+}
+
+void	perror_exit(void)
+{
+	perror("error creating pipes");
+	exit(errno);
 }
