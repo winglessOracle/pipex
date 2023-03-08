@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/31 11:41:57 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/07 12:55:59 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/08 21:30:08 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	init_data(int argc, char **argv, t_data *data)
 		exit(4);
 	}
 	if (data->fd_in_file < 0)
-		data->fd_in_file = open("here_doc", O_RDWR | O_CREAT | O_TRUNC, 0644);
+		data->fd_in_file = open("here_doc_temp", O_RDWR | O_CREAT | O_TRUNC, 0644);
 	return (0);
 }
 
@@ -118,10 +118,7 @@ char	**check_cmd_args(char **cmd_args)
 	int	i;
 
 	if (!cmd_args)
-	{
-		perror("error building cmd_args");
-		exit(19);
-	}
+		perror_pipes(4);
 	i = 1;
 	while (cmd_args[i])
 	{
@@ -138,6 +135,6 @@ char	**check_cmd_args(char **cmd_args)
 		i++;
 	}
 	if (cmd_args == NULL)
-		perror_exit();
+		perror_pipes(4);
 	return (cmd_args);
 }

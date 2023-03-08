@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/31 12:09:03 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/06 10:23:20 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/08 21:30:27 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,26 @@ int	check_path(char **envp)
 	return (path);
 }
 
-void	perror_exit(void)
+void	perror_pipes(int select)
 {
-	perror("error creating pipes");
-	exit(errno);
+	if (select == 1)
+	{
+		perror("error creating pipes");
+		exit (9);
+	}
+	if (select == 2)
+	{
+		perror("error closing pipes");
+		exit (20);
+	}
+	if (select == 3)
+	{
+		perror("error DUP fd");
+		exit (21);
+	}
+	if (select == 4)
+	{
+		perror("error in creating args");
+		exit (19);
+	}
 }

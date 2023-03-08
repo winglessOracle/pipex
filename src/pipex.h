@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 18:35:00 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/07 12:48:40 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/08 22:03:44 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_data
 }	t_data;
 
 int		check_params(int argc, char **argv);
+int		check_params_num(int argc, char **argv);
 int		check_path(char **envp);
 int		check_argv(int argc, char **argv);
 int		init_data(int argc, char **argv, t_data *data);
@@ -53,16 +54,17 @@ int		check_my_dirs(char **my_directories, t_data *data);
 int		ft_last_char(const char *str, const char c);
 void	ft_pop(char **arr, int index);
 int		get_exit_st(t_data *data);
-void	perror_exit(void);
+void	perror_pipes(int select);
 void	free_all(t_data *data);
+
 
 #endif
 
 /* error handeling
-1: to few arguemts passed in command line
-2: file does not exist or you do not have permission to read the file
+1: to few or too arguments passed in command line (four required and more allowd in bonus)
+2: error creating directories for execve
 3: malloc failed for data struct
-4: could not get a file descriptor for the infile or for outfile
+4: could not get a file descriptor for infile or outfile
 5: error allocating processes rows
 6: error allocating processes cols
 7: error allocating pipes rows
@@ -76,6 +78,10 @@ void	free_all(t_data *data);
 15: exceded max input for limiter using here_doc
 16: error creating here_doc
 17: unknown command or no permission 
-18: error allocating memmory for fork
+18: error allocating memory for fork
 19: error in allocating memory for cmd_args
+20 error closing pipes
+21: error in dup 2 to redirect stdin or out
+23: error. here_doc not in mandatory part
+127: unkown command
 */
