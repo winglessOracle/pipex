@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 10:21:01 by cwesseli      #+#    #+#                 */
-/*   Updated: 2022/10/21 10:32:53 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/13 15:34:42 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**ft_split(char const *s, char c)
 	int			rows;
 	int			cur_row;
 
+	if (!s)
+		return (NULL);
 	rows = ft_count_word(s, c);
 	arr = malloc(sizeof(char *) * (rows + 1));
 	if (!arr)

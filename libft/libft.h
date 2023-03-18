@@ -6,7 +6,7 @@
 /*   By: carlo <carlo@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 09:28:59 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/02/13 15:05:55 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/02/14 08:31:00 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_isspace(int c);
 void	ft_putchar(unsigned const char c);
 void	ft_putstr(const char *str);
-int		ft_wordcount(const char *s, char c);
 
 // for ft_printf
 int		ft_printf(const char *str, ...);
@@ -119,6 +118,7 @@ void	ft_free_array(char **arr);
 void	ft_free_array_int(int **arr);
 void	ft_check_params(int argc, char *argv, int n);
 char	*ft_strjoin_free(char *s1, char const *s2);
+int		ft_wordcount(const char *s, char c);
 
 # define COLOR_RED "\x1b[0;31m"
 # define COLOR_GREEN "\x1b[0;32m"

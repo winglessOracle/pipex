@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/31 11:41:57 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/08 21:30:08 by carlo         ########   odam.nl         */
+/*   Updated: 2023/03/18 19:03:24 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	init_data(int argc, char **argv, t_data *data)
 		exit(4);
 	}
 	if (data->fd_in_file < 0)
-		data->fd_in_file = open("here_doc_temp", O_RDWR | O_CREAT | O_TRUNC, 0644);
+		data->fd_in_file = open("here_doc_temp",
+				O_RDWR | O_CREAT | O_TRUNC, 0644);
 	return (0);
 }
 

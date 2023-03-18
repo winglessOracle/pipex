@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile_ori                                       :+:    :+:             #
 #                                                      +:+                     #
 #    By: carlo <carlo@student.42.fr>                  +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 09:28:26 by cwesseli      #+#    #+#                  #
-#    Updated: 2023/03/08 10:08:22 by carlo         ########   odam.nl          #
+#    Updated: 2023/03/18 19:02:07 by carlo         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ OBJ_FILES	= $(addprefix obj/, pipex.o utils.o utils2.o utils3.o error_free.o for
 				pipes.o)
 
 all: libft $(NAME)
+
+bonus: all
 
 libft:
 	@$(MAKE) -C $(LIBFT)
@@ -53,4 +55,4 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY:	all clean fclean re libft
+.PHONY:	all bonus clean fclean re libft

@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/02/06 12:11:24 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/08 21:30:45 by carlo         ########   odam.nl         */
+/*   Updated: 2023/03/18 19:03:07 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	close_all_pipes(t_data *data)
 		i++;
 	}
 }
-
 
 void	set_pipes_child(int i, t_data *data)
 {

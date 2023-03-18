@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 12:34:20 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/02/06 17:44:11 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/01/30 12:34:54 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_free_array(char **arr)
 		ft_free(arr[i]);
 		i++;
 	}
-	ft_free(arr);
+	free(arr);
 	arr = 0;
 }

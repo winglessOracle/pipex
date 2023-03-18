@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 18:01:01 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/08 19:52:45 by carlo         ########   odam.nl         */
+/*   Updated: 2023/03/18 19:03:11 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	main(int argc, char **argv, char **envp)
 	get_processes(argv, data);
 	create_forks(envp, data);
 	close_all_pipes(data);
-	unlink("here_doc_temp");
+	if (ft_check_extention(argv[argc - 1], "here_doc_temp") != 0)
+		unlink("here_doc_temp");
 	exitstatus = get_exit_st(data);
 	free_all(data);
 	return (exitstatus);

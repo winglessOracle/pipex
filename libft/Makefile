@@ -6,22 +6,27 @@
 #    By: carlo <carlo@student.42.fr>                  +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/10 09:28:26 by cwesseli      #+#    #+#                  #
-#    Updated: 2023/02/13 15:04:55 by cwesseli      ########   odam.nl          #
+#    Updated: 2023/03/17 10:52:45 by cwesseli      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 #//= Colors =//#
 BOLD	:= \033[1m
+BLACK	:= \033[30;1m
+RED		:= \033[31;1m
 GREEN	:= \033[32;1m
+YELLOW	:= \033[33;1m
 BLUE	:= \033[34;1m
+MAGENTA	:= \033[35;1m
+CYAN	:= \033[36;1m
+WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
 NAME		= libft.a
 CC			= clang
 AR			= ar -rsc
 RM			= rm -rf
-CFLAGS		= -Wall -Wextra -Werror 
-#-fsanitize=address -g
+CFLAGS		= -Wall -Wextra -Werror
 OBJ_FILES	=		$(addprefix obj/,ft_isalpha.o ft_strlen.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o\
 						ft_toupper.o ft_tolower.o ft_atoi.o ft_bzero.o ft_strncmp.o ft_strlcat.o ft_strlcpy.o\
 						ft_memchr.o ft_memcmp.o ft_strchr.o ft_memcpy.o ft_memset.o ft_memmove.o\

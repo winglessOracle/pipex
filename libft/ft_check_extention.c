@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 12:30:39 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/01/30 12:30:56 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/07 11:27:25 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_check_extention(const char *file, const char *extention)
 	while (j > -1)
 	{
 		if (file[i--] != extention[j--])
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 09:26:11 by cwesseli      #+#    #+#                 */
-/*   Updated: 2022/10/26 10:37:02 by cwesseli      ########   odam.nl         */
+/*   Updated: 2023/03/16 13:23:49 by cwesseli      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	output;
-	int	sign;
+	int			i;
+	long int	output;
+	int			sign;
 
 	i = 0;
 	output = 0;

@@ -6,7 +6,7 @@
 /*   By: cwesseli <cwesseli@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 18:35:00 by cwesseli      #+#    #+#                 */
-/*   Updated: 2023/03/08 22:03:44 by carlo         ########   odam.nl         */
+/*   Updated: 2023/03/18 19:03:18 by carlo         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ int		get_exit_st(t_data *data);
 void	perror_pipes(int select);
 void	free_all(t_data *data);
 
-
 #endif
 
 /* error handeling
-1: to few or too arguments passed in command line (four required and more allowd in bonus)
+1: to few or too arguments passed in command line 
+(four required and more allowd in bonus)
 2: error creating directories for execve
 3: malloc failed for data struct
 4: could not get a file descriptor for infile or outfile
